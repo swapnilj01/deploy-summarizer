@@ -21,9 +21,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
+    
     url_name1 = [str(x) for x in request.form.values()]
     url_name = url_name1[0]
 
@@ -103,14 +101,15 @@ def predict():
 
     import heapq
 
-    print("\nTotal number of sentences in the dictionary={0}\n".format(len(sentence_score)))
+    #print("\nTotal number of sentences in the dictionary={0}\n".format(len(sentence_score)))
     #number = int(input("Enter the number of sentences you want the summary to contain:\n"))
+    
     #storing the summary according to the sentence importances
     summary = heapq.nlargest(4,sentence_score,key = sentence_score.get)
     summary = ' '.join(summary)
 
 
-    return render_template('index.html', summary='The transaction is categorized as {}'.format(summary))
+    return render_template('index.html', summary='{0}'.format(summary))
 
 
 if __name__ == "__main__":
