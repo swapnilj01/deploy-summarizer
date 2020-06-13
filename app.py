@@ -19,8 +19,8 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST'])
-def predict():
+@app.route('/summary',methods=['POST'])
+def summary():
     
     url_name1 = [str(x) for x in request.form.values()]
     url_name = url_name1[0]
