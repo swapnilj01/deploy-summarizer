@@ -17,7 +17,7 @@
 	<h1>Print summary of a web article </h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('summary')}}"method="post">
         <input type="text" name="url" placeholder="URL of website" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Print Summary</button>
